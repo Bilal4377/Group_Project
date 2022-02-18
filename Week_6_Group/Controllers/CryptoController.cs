@@ -29,7 +29,7 @@ namespace Week_6_Group.Controllers
             }
 
 
-            Root list = JsonConvert.DeserializeObject<Root>(result);
+            Root? list = JsonConvert.DeserializeObject<Root>(result);
             return Ok(list);
         }
     }
