@@ -73,7 +73,6 @@ namespace Week_6_Group.Controllers
         public bool? quoteOrderQtyMarketAllowed { get; set; }
         public bool? isSpotTradingAllowed { get; set; }
         public bool? isMarginTradingAllowed { get; set; }
-        //public List<string>? filters { get; set; }
         public List<string>? permissions { get; set; }
     }
 }
