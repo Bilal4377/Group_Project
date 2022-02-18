@@ -9,7 +9,7 @@ namespace Week_6_Group.Controllers
     public class WeatherForecastController : ControllerBase
     {
         [HttpGet(Name = "GetWeatherForecast")]
-        public ActionResult<List<Root>> Get()
+        public ActionResult<List<Root>> Get(string city)
         {
             HttpClient client = new HttpClient();
             dynamic? obj = new ExpandoObject();
@@ -17,7 +17,7 @@ namespace Week_6_Group.Controllers
 
             try
             {
-                HttpResponseMessage response = client.GetAsync("https://weatherdbi.herokuapp.com/data/weather/perth").Result;
+                HttpResponseMessage response = client.GetAsync("https://weatherdbi.herokuapp.com/data/weather/" + city).Result;
                 response.EnsureSuccessStatusCode();
                 result = response.Content.ReadAsStringAsync().Result;
             }

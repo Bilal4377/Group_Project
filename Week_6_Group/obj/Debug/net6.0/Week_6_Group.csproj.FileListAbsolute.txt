@@ -29,3 +29,34 @@ C:\Users\bilal\OneDrive\Desktop\Files\C# Programs\Week_6_Group\Week_6_Group\bin\
 C:\Users\bilal\OneDrive\Desktop\Files\C# Programs\Week_6_Group\Week_6_Group\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\bilal\OneDrive\Desktop\Files\C# Programs\Week_6_Group\Week_6_Group\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\bilal\OneDrive\Desktop\Files\C# Programs\Week_6_Group\Week_6_Group\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\obj\Debug\net6.0\Week_6_Group.csproj.AssemblyReference.cache
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\obj\Debug\net6.0\Week_6_Group.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\obj\Debug\net6.0\Week_6_Group.AssemblyInfoInputs.cache
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\obj\Debug\net6.0\Week_6_Group.AssemblyInfo.cs
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\obj\Debug\net6.0\Week_6_Group.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\obj\Debug\net6.0\Week_6_Group.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\obj\Debug\net6.0\Week_6_Group.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\obj\Debug\net6.0\Week_6_Group.dll
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\obj\Debug\net6.0\ref\Week_6_Group.dll
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\obj\Debug\net6.0\Week_6_Group.pdb
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\bin\Debug\net6.0\appsettings.json
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\bin\Debug\net6.0\Week_6_Group.exe
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\bin\Debug\net6.0\Week_6_Group.deps.json
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\bin\Debug\net6.0\Week_6_Group.runtimeconfig.json
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\bin\Debug\net6.0\Week_6_Group.dll
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\bin\Debug\net6.0\ref\Week_6_Group.dll
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\bin\Debug\net6.0\Week_6_Group.pdb
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\obj\Debug\net6.0\scopedcss\bundle\Week_6_Group.styles.css
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\obj\Debug\net6.0\Week_6_Group.csproj.CopyComplete
+C:\Users\Martin\Documents\GitHub\Group_Project\Week_6_Group\obj\Debug\net6.0\Week_6_Group.genruntimeconfig.cache
