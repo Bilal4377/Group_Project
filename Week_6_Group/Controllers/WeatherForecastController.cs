@@ -54,7 +54,7 @@ namespace Week_6_Group.Controllers
         public class Temp
         {
             public int? c { get; set; }
-            public in?t f { get; set; }
+            public int? f { get; set; }
         }
         public class Wind
         {
