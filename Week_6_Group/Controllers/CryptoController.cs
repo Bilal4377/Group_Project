@@ -1,6 +1,7 @@
-﻿using System.Dynamic;
+using System.Dynamic;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Json;
 
 namespace Week_6_Group.Controllers
 {
@@ -8,8 +9,9 @@ namespace Week_6_Group.Controllers
     [ApiController]
     public class CryptoController : ControllerBase
     {
+        [Route("1")]
         [HttpGet]
-        public ActionResult Get(string symbol)
+        public ActionResult<Trade> Get()
         {
             HttpClient client = new HttpClient();
             dynamic? obj = new ExpandoObject();
@@ -18,7 +20,43 @@ namespace Week_6_Group.Controllers
             try
             {
                 HttpResponseMessage response = client
-                    .GetAsync("https://api.binance.com/api/v3/exchangeInfo?symbol=" + symbol)
+                    .GetAsync("https://api.binance.com/api/v3/trades?symbol=" + "BNBBTC")
+                    .Result;
+                response.EnsureSuccessStatusCode();
+                result = response.Content.ReadAsStringAsync().Result;
+            }
+
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            List<Trade>? trades = JsonConvert.DeserializeObject<List<Trade>>(result);
+            var lDopuble = new List<decimal>();
+
+            foreach (Trade trade in trades)
+            {
+                lDopuble.Add(trade.price);
+            }
+
+            decimal sumOfPrices = lDopuble.Sum();
+
+            //ExchangeInformation? list = JsonConvert.DeserializeObject<ExchangeInformation>(result);
+            return Ok(sumOfPrices);
+        }
+
+        [Route("2")]
+        [HttpGet]
+        public ActionResult<Trade> Get2()
+        {
+            HttpClient client = new HttpClient();
+            dynamic? obj = new ExpandoObject();
+            string result;
+
+            try
+            {
+                HttpResponseMessage response = client
+                    .GetAsync("https://api.binance.com/api/v3/trades?symbol=" + "BNBBTC")
                     .Result;
                 response.EnsureSuccessStatusCode();
                 result = response.Content.ReadAsStringAsync().Result;
@@ -28,51 +66,104 @@ namespace Week_6_Group.Controllers
                 return BadRequest(ex.Message);
             }
 
+            List<Trade>? trades = JsonConvert.DeserializeObject<List<Trade>>(result);
+            decimal maxValue = 0;
+            Trade maxValueTrade = trades[0];
+            foreach (Trade trade in trades)
+            {
+                decimal value = (decimal)trade.price * (decimal)trade.qty;
+                if (value > maxValue)
+                {
+                    maxValue = value;
+                    maxValueTrade = trade;
+                }
+            }
 
-            Root? list = JsonConvert.DeserializeObject<Root>(result);
-            return Ok(list);
+            //ExchangeInformation? list = JsonConvert.DeserializeObject<ExchangeInformation>(result);
+            return Ok(maxValueTrade);
+        }
+
+        [Route("3")]
+        [HttpGet]
+        public ActionResult<Trade> Get3()
+        {
+            HttpClient client = new HttpClient();
+            dynamic? obj = new ExpandoObject();
+            string result;
+
+            try
+            {
+                HttpResponseMessage response = client
+                    .GetAsync("https://api.binance.com/api/v3/trades?symbol=" + "BNBBTC")
+                    .Result;
+                response.EnsureSuccessStatusCode();
+                result = response.Content.ReadAsStringAsync().Result;
+            }
+
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            List<Trade>? trades = JsonConvert.DeserializeObject<List<Trade>>(result);
+            var lDopuble = new List<decimal>();
+
+            foreach (Trade trade in trades)
+            {
+                lDopuble.Add(trade.price);
+            }
+
+            decimal avgfPrices = lDopuble.Average();
+
+            //ExchangeInformation? list = JsonConvert.DeserializeObject<ExchangeInformation>(result);
+            return Ok(avgfPrices);
+        }
+
+        [Route("4")]
+        [HttpGet]
+        public ActionResult<Trade> Get4()
+        {
+            HttpClient client = new HttpClient();
+            dynamic? obj = new ExpandoObject();
+            string result;
+
+            try
+            {
+                HttpResponseMessage response = client
+                    .GetAsync("https://api.binance.com/api/v3/trades?symbol=" + "BNBBTC")
+                    .Result;
+                response.EnsureSuccessStatusCode();
+                result = response.Content.ReadAsStringAsync().Result;
+            }
+
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            List<Trade>? trades = JsonConvert.DeserializeObject<List<Trade>>(result);
+            var lDopuble = new List<decimal>();
+
+            foreach (Trade trade in trades)
+            {
+                lDopuble.Add(trade.id);
+            }
+
+            decimal numOfTrades = lDopuble.Count();
+
+            //ExchangeInformation? list = JsonConvert.DeserializeObject<ExchangeInformation>(result);
+            return Ok(numOfTrades);
+        }
+
+        public class Trade
+        {
+            public Int64 id { get; set; }
+            public decimal price { get; set; }
+            public decimal? qty { get; set; }
+            public decimal? quoteQty { get; set; }
+            public Int64? time { get; set; }
+            public bool? isBuyerMaker { get; set; }
+            public bool? isBestMatch { get; set; }
         }
     }
-
-    public class Root
-    {
-        [System.Diagnostics.CodeAnalysis.
-            SuppressMessage("Style", "IDE1006:Naming Styles", 
-            Justification = "<deserialization is case sensitive so adhering to the standard would break the API>")]
-        public string? timezone { get; set; }
-        //ignore IDE1006 for all variables because deserialization is case sensitive,
-        //so adhering to the standard would break the API
-        public Int64 serverTime { get; set; }
-        public List<RateLimit>? rateLimits { get; set; } 
-        public List<string>? exchangeFilters { get; set; }
-        public List<Symbols>? symbols { get; set; }
-
-    }
-    
-    public class RateLimit
-    {
-        public string? rateLimitType { get; set; }
-        public string? interval { get; set; }
-        public int intervalNum { get; set; }
-        public int limit{ get; set; }
-    }
-    public class Symbols
-    {
-        public string? symbol { get; set; }
-        public string? status { get; set; }
-        public string? baseAsset { get; set; }
-        public int? baseAssetPrecision { get; set; }
-        public string? quoteAsset { get; set; }
-        public int? quotePrecision { get; set; }
-        public int? quoteAssetPrecision { get; set; }
-        public int? baseCommissionPrecision { get; set; }
-        public int? quoteCommissionPrecision { get; set; }
-        public List<string>? orderTypes { get; set; }
-        public bool? icebergAllowed { get; set; }
-        public bool? ocoAllowed { get; set; }
-        public bool? quoteOrderQtyMarketAllowed { get; set; }
-        public bool? isSpotTradingAllowed { get; set; }
-        public bool? isMarginTradingAllowed { get; set; }
-        public List<string>? permissions { get; set; }
-    }
-}
+} 
