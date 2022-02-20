@@ -4,11 +4,11 @@ using Newtonsoft.Json;
 
 namespace Week_6_Group.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/GetRecentMaximumValueTrade")]
     [ApiController]
     public class CryptoController : ControllerBase
     {
-        [HttpGet]
+        [HttpGet(Name = "GetRecentMaximumValueTrade")]
         public ActionResult Get(string symbol)
         {
             HttpClient client = new HttpClient();
