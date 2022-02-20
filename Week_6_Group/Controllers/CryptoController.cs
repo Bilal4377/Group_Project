@@ -9,7 +9,7 @@ namespace Week_6_Group.Controllers
     [ApiController]
     public class CryptoController : ControllerBase
     {
-        [Route("1")]
+        [Route("1/sumOfPrices")]
         [HttpGet]
         public ActionResult<Trade> Get()
         {
@@ -45,7 +45,7 @@ namespace Week_6_Group.Controllers
             return Ok(sumOfPrices);
         }
 
-        [Route("2")]
+        [Route("2/maxValue")]
         [HttpGet]
         public ActionResult<Trade> Get2()
         {
@@ -83,7 +83,7 @@ namespace Week_6_Group.Controllers
             return Ok(maxValueTrade);
         }
 
-        [Route("3")]
+        [Route("3/avgfPrices")]
         [HttpGet]
         public ActionResult<Trade> Get3()
         {
@@ -119,7 +119,7 @@ namespace Week_6_Group.Controllers
             return Ok(avgfPrices);
         }
 
-        [Route("4")]
+        [Route("4/numOfTrades")]
         [HttpGet]
         public ActionResult<Trade> Get4()
         {
