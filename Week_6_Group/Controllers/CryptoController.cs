@@ -11,7 +11,7 @@ namespace Week_6_Group.Controllers
     {
         [Route("1/sumOfPrices")]
         [HttpGet]
-        public ActionResult<Trade> Get()
+        public ActionResult<Trade> Get(string symbol)
         {
             HttpClient client = new HttpClient();
             dynamic? obj = new ExpandoObject();
@@ -20,7 +20,7 @@ namespace Week_6_Group.Controllers
             try
             {
                 HttpResponseMessage response = client
-                    .GetAsync("https://api.binance.com/api/v3/trades?symbol=" + "BNBBTC")
+                    .GetAsync("https://api.binance.com/api/v3/trades?symbol=" + symbol)
                     .Result;
                 response.EnsureSuccessStatusCode();
                 result = response.Content.ReadAsStringAsync().Result;
@@ -32,14 +32,14 @@ namespace Week_6_Group.Controllers
             }
 
             List<Trade>? trades = JsonConvert.DeserializeObject<List<Trade>>(result);
-            var lDopuble = new List<decimal>();
+            var lDouble = new List<decimal>();
 
             foreach (Trade trade in trades)
             {
-                lDopuble.Add(trade.price);
+                lDouble.Add(trade.price);
             }
 
-            decimal sumOfPrices = lDopuble.Sum();
+            decimal sumOfPrices = lDouble.Sum();
 
             //ExchangeInformation? list = JsonConvert.DeserializeObject<ExchangeInformation>(result);
             return Ok(sumOfPrices);
@@ -47,7 +47,7 @@ namespace Week_6_Group.Controllers
 
         [Route("2/maxValue")]
         [HttpGet]
-        public ActionResult<Trade> Get2()
+        public ActionResult<Trade> Get2(string symbol)
         {
             HttpClient client = new HttpClient();
             dynamic? obj = new ExpandoObject();
@@ -56,7 +56,7 @@ namespace Week_6_Group.Controllers
             try
             {
                 HttpResponseMessage response = client
-                    .GetAsync("https://api.binance.com/api/v3/trades?symbol=" + "BNBBTC")
+                    .GetAsync("https://api.binance.com/api/v3/trades?symbol=" + symbol)
                     .Result;
                 response.EnsureSuccessStatusCode();
                 result = response.Content.ReadAsStringAsync().Result;
@@ -85,7 +85,7 @@ namespace Week_6_Group.Controllers
 
         [Route("3/avgfPrices")]
         [HttpGet]
-        public ActionResult<Trade> Get3()
+        public ActionResult<Trade> Get3(string symbol)
         {
             HttpClient client = new HttpClient();
             dynamic? obj = new ExpandoObject();
@@ -94,7 +94,7 @@ namespace Week_6_Group.Controllers
             try
             {
                 HttpResponseMessage response = client
-                    .GetAsync("https://api.binance.com/api/v3/trades?symbol=" + "BNBBTC")
+                    .GetAsync("https://api.binance.com/api/v3/trades?symbol=" + symbol)
                     .Result;
                 response.EnsureSuccessStatusCode();
                 result = response.Content.ReadAsStringAsync().Result;
@@ -121,7 +121,7 @@ namespace Week_6_Group.Controllers
 
         [Route("4/numOfTrades")]
         [HttpGet]
-        public ActionResult<Trade> Get4()
+        public ActionResult<Trade> Get4(string symbol)
         {
             HttpClient client = new HttpClient();
             dynamic? obj = new ExpandoObject();
@@ -130,7 +130,7 @@ namespace Week_6_Group.Controllers
             try
             {
                 HttpResponseMessage response = client
-                    .GetAsync("https://api.binance.com/api/v3/trades?symbol=" + "BNBBTC")
+                    .GetAsync("https://api.binance.com/api/v3/trades?symbol=" + symbol)
                     .Result;
                 response.EnsureSuccessStatusCode();
                 result = response.Content.ReadAsStringAsync().Result;
