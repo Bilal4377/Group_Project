@@ -29,10 +29,20 @@ namespace Week_6_Group.Controllers
             }
 
             List<Trade>? trades = JsonConvert.DeserializeObject<List<Trade>>(result);
-
+            decimal maxValue = 0;
+            Trade maxValueTrade = trades[0];
+            foreach (Trade trade in trades)
+            {
+                decimal value = (decimal)trade.price * (decimal)trade.qty;
+                if (value > maxValue)
+                {
+                    maxValue = value;
+                    maxValueTrade = trade;
+                }
+            }
             
             //ExchangeInformation? list = JsonConvert.DeserializeObject<ExchangeInformation>(result);
-            return Ok(trades);
+            return Ok(maxValueTrade);
         }
     }
 
@@ -46,12 +56,6 @@ namespace Week_6_Group.Controllers
         public Int64? time { get; set; }
         public bool? isBuyerMaker { get; set; }
         public bool? isBestMatch { get; set; }
-        //public decimal value;
-
-        //public void setValue()
-        //{
-        //    decimal value = price * qty;
-        //}
     }
     //THE FOLLOWING IS THE COMMENTED OUT MODELS WE USED WHEN TINKERING WITH THE EXCHANGEINFORMATION ROUTE
     //WE ABANDONED THIS IN ORDER TO PERFOM CALCULATIONS USING THE TRADE ROUTE INSTEAD
