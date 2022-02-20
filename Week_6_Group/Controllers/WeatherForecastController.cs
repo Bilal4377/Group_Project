@@ -9,16 +9,16 @@ namespace Week_6_Group.Controllers
     public class WeatherForecastController : ControllerBase
     {
         [HttpGet(Name = "GetWeatherForecast")]
-        public ActionResult<List<Root>> Get(string city)
+        public ActionResult<CurrentConditions> Get(string city)
         {
             HttpClient client = new HttpClient();
-            dynamic? obj = new ExpandoObject();
             string result;
 
             try
             {
                 HttpResponseMessage response = client.GetAsync("https://weatherdbi.herokuapp.com/data/weather/" + city).Result;
                 response.EnsureSuccessStatusCode();
+              
                 result = response.Content.ReadAsStringAsync().Result;
             }
             catch (Exception ex)
@@ -26,9 +26,16 @@ namespace Week_6_Group.Controllers
                 return BadRequest(ex.Message);
             }
 
-
             Root list = JsonConvert.DeserializeObject<Root>(result);
-            return Ok(list);
+            CurrentConditions currentsConditions = new CurrentConditions();
+            currentsConditions.dayhour = list.currentConditions.dayhour;
+            currentsConditions.temp = list.currentConditions.temp;
+            currentsConditions.wind = list.currentConditions.wind;
+            currentsConditions.precip = list.currentConditions.precip;
+            currentsConditions.humidity = list.currentConditions.humidity;
+            currentsConditions.comment = list.currentConditions.comment;
+            
+            return currentsConditions;
         }
 
         public class Temp

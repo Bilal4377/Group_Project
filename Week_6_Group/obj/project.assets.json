@@ -420,24 +420,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Martin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\aple3\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Martin\\Documents\\GitHub\\Group_Project\\Week_6_Group\\Week_6_Group.csproj",
+      "projectUniqueName": "C:\\Users\\aple3\\OneDrive\\Desktop\\Group_Project\\Week_6_Group\\Week_6_Group.csproj",
       "projectName": "Week_6_Group",
-      "projectPath": "C:\\Users\\Martin\\Documents\\GitHub\\Group_Project\\Week_6_Group\\Week_6_Group.csproj",
-      "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Martin\\Documents\\GitHub\\Group_Project\\Week_6_Group\\obj\\",
+      "projectPath": "C:\\Users\\aple3\\OneDrive\\Desktop\\Group_Project\\Week_6_Group\\Week_6_Group.csproj",
+      "packagesPath": "C:\\Users\\aple3\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\aple3\\OneDrive\\Desktop\\Group_Project\\Week_6_Group\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\aple3\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -490,7 +485,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
